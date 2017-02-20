@@ -1,0 +1,38 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ./partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Board Game Database</h1>
+            <p>Welcome to the Board Game Database. We are all games, all the time.</p>
+        </div>
+        
+        <div>
+	        <h2>Some Message</h2>
+			<p><%= tagline %></p>
+	        
+	        <h2>Game List</h2>
+			<ul>
+			    <% games.forEach(function(game) { %>
+			        <li><%= game.Name %> - <%= game.Description %></li>
+			    <% }); %>
+			</ul>
+        </div>
+    </main>
+
+    <footer>
+        <% include ./partials/footer %>
+    </footer>
+    
+</body>
+</html>
