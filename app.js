@@ -21,4 +21,25 @@ app.get('/about', function(req, res) {
 	res.render('about');
 });
 
+app.get('/games', function(req, res) {
+	db.all("select Name, Description, (select Name from Categories where Categories.CategoryID = Games.CategoryID) as Category, MinimumPlayers, MaximumPlayers, RecommendedAge as Ages, MSRP from Games", function(err, games) {
+		res.render('games', {
+			games: games
+		});
+	});
+});
+
+app.get('/groups', function(req, res) {
+	res.render('groups');
+});
+
+app.get('/events', function(req, res) {
+	res.render('events');
+});
+
+
+app.get('/test', function(req, res) {
+	res.render('test');
+});
+
 app.listen(8080);

@@ -1,0 +1,51 @@
+<!-- views/pages/games.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ./partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Board Game Database</h1>
+            <p>Welcome to the Board Game Database. We are all games, all the time.</p>
+        </div>
+        
+        <div>	        
+	        <h2>Games</h2>
+	        <table class = "table">
+	        	<tr>
+	        		<th>Name</th>
+	        		<th>Description</th>
+	        		<th>Category</th>
+	        		<th>Players</th>
+	        		<th>Age</th>
+	        		<th>MSRP</th>
+	        	</tr>			
+			    <% games.forEach(function(game) { %>
+			        <tr>
+				        <td><%= game.Name %></td>
+				        <td><%= game.Description %></td>
+				        <td><%= game.Category %></td>
+				        <td><%= game.MinimumPlayers %> - <%= game.MaximumPlayers %></td>
+				        <td><%= game.Ages %>+</td>
+				        <td>$<%= game.MSRP %></td>
+			        </tr>
+			    <% }); %>			
+			</table>
+        </div>
+    </main>
+
+    <footer>
+    	<br /><br /><br /><br /><br />
+        <% include ./partials/footer %>
+    </footer>
+    
+</body>
+</html>
