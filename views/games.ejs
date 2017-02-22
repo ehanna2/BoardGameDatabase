@@ -11,18 +11,12 @@
         <% include ./partials/header %>
     </header>
 
-    <main>
-        <div class="jumbotron">
-            <h1>Board Game Database</h1>
-            <p>Welcome to the Board Game Database. We are all games, all the time.</p>
-        </div>
-        
+    <main>                
         <div>	        
 	        <h2>Games</h2>
 	        <table class = "table">
 	        	<tr>
-	        		<th>Name</th>
-	        		<th>Description</th>
+	        		<th>Name</th>	        		
 	        		<th>Category</th>
 	        		<th>Players</th>
 	        		<th>Age</th>
@@ -30,8 +24,7 @@
 	        	</tr>			
 			    <% games.forEach(function(game) { %>
 			        <tr>
-				        <td><%= game.Name %></td>
-				        <td><%= game.Description %></td>
+				        <td><a href="/game?GameID=<%= game.GameID %>"><%= game.Name %></a></td>				        
 				        <td><%= game.Category %></td>
 				        <td><%= game.MinimumPlayers %> - <%= game.MaximumPlayers %></td>
 				        <td><%= game.Ages %>+</td>
@@ -42,8 +35,7 @@
         </div>
     </main>
 
-    <footer>
-    	<br /><br /><br /><br /><br />
+    <footer>    	
         <% include ./partials/footer %>
     </footer>
     
