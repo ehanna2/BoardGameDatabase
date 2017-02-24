@@ -1,0 +1,12 @@
+--Returns First Name, Last Name, Game Reviewed, Review Date, Rating, and Comments
+
+select 
+	Users.FirstName
+	, Users.LastName
+	, Games.Name as 'Game Reviewed'
+	, Reviews.Date as 'Review Date'
+	,Rating
+	,Comments
+from Reviews
+left join Users on Reviews.UserID = Users.UserID
+left join Games on Reviews.GameID = Games.GameID
